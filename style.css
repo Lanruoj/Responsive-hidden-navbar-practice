@@ -11,7 +11,7 @@ html, body {
 body {
   box-sizing: border-box;
   position: relative;
-  background-color: #F2FDF1;
+  background-image: radial-gradient(closest-side at 60% 8%, #e66465, #9198e5);
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
@@ -22,16 +22,22 @@ header {
   top: 0;
   width: 100vw;
   height: 5.2em;
-  background-color: #436040;
-  opacity: 100%;
+  background-color: white;
+  opacity: 20%;
 }
 header h1 {
   position: fixed;
-  top: 0.6em;
-  right: 2em;
+  top: 0.3em;
+  right: 1.3em;
   font-family: "Karla", sans-serif;
-  font-size: 2.5em;
+  font-size: 2.1em;
   color: #D9EBC9;
+  opacity: 100%;
+  background-color: blue;
+  border-radius: 50%;
+  padding: 0.4em;
+  padding-right: 0.6em;
+  box-shadow: black 10px 0px 10px;
 }
 
 #nav-mob #nav-icon {
@@ -47,18 +53,19 @@ header h1 {
 }
 #nav-mob #nav-links {
   position: fixed;
-  top: -20em;
-  left: 0em;
+  top: 5.1em;
+  left: -22.2em;
   transition: 0.2s;
 }
 #nav-mob #nav-links ul {
+  height: 100vh;
   background-color: #436040;
   opacity: 100%;
 }
 #nav-mob #nav-links li {
   list-style: none;
   font-family: "Karla", sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   padding: 0.3em 0.3em 0.3em 3.5em;
   transition: 0.5s;
 }
@@ -76,7 +83,7 @@ header h1 {
 }
 #nav-mob #show:checked ~ #nav-links {
   display: block;
-  transform: translateY(25.1em);
+  transform: translateX(20em);
 }
 #nav-mob #show:checked ~ #nav-links li {
   background-color: #436040;

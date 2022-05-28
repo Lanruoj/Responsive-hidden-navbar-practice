@@ -22,7 +22,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-color: $white;
+    background-image: radial-gradient(closest-side at 60% 8%, #e66465, #9198e5);
     font-family: $karla;
     font-size: 16px;
 }
@@ -33,28 +33,27 @@ header {
     top: 0; // prevents header from dropping when I adjust <main>!
     width: 100vw;
     height: 5.2em;
-    background-color: $pine;
-    opacity: 100%;
+    background-color: white;
+    opacity: 20%;
     // background-image: -webkit-linear-gradient(top, $pine 20%, $white);
     // box-shadow: 10px 10px 5px $white;
     h1 {
         position: fixed;
-        top: 0.6em;
-        right: 2em;
+        top: 0.3em;
+        right: 1.3em;
         font-family: $karla;
-        font-size: 2.5em;
+        font-size: 2.1em;
         color: $mint;
+        opacity: 100%;
+        background-color: blue;
+        border-radius: 50%;
+        padding: 0.4em;
+        padding-right: 0.6em;
+        box-shadow: black 10px 0px 10px;
     }
 }
 
 //MOBILE NAV MENU
-//   #show {
-//     display: none;
-//   }
-  
-//   #show:checked ~ #nav-links {
-//     display: block;
-//   }
 #nav-mob {
     #nav-icon {
         z-index: 4;
@@ -69,17 +68,18 @@ header {
     }
     #nav-links {
         position: fixed;
-        top: -20em;
-        left: 0em;
+        top: 5.1em;
+        left: -22.2em;
         transition: 0.2s;
         ul {
+            height: 100vh; //makes the sidebar take up full vertical height
             background-color: $pine;
             opacity: 100%;
         }
         li {
             list-style: none;
             font-family: $karla;
-            font-size: 2em;
+            font-size: 3em;
             // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
             transition: 0.5s;
@@ -102,7 +102,7 @@ header {
     }
     #show:checked ~ #nav-links {
         display: block;
-        transform: translateY(25.1em);
+        transform: translateX(20em);
     }
     #show:checked ~ #nav-links li {
         background-color: $pine;
