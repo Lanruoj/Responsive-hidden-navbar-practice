@@ -11,7 +11,7 @@ html, body {
 body {
   box-sizing: border-box;
   position: relative;
-  background-image: radial-gradient(farthest-side at 40% 50%, rgb(230, 100, 101), rgb(145, 152, 229));
+  background-color: #F2FDF1;
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
@@ -21,28 +21,52 @@ header {
   z-index: 3;
   top: 0;
   width: 100vw;
-  height: 5.2em;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 10%, #4000FF);
+  height: 5.8em;
+  background-color: #F2FDF1;
   backdrop-filter: blur(0.2em);
-  box-shadow: 2em 2em 2em rgba(0, 0, 0, 0);
+  box-shadow: 1em 1em 1em #F2FDF1;
 }
 header h1 {
   z-index: 2;
   position: fixed;
-  top: 0.3em;
+  top: 0.4em;
   right: 1.3em;
   font-family: "Rammetto One", cursive;
-  font-size: 1.8em;
-  color: #D9EBC9;
-  background-image: -webkit-linear-gradient(130deg, rgb(230, 100, 101), rgba(0, 21, 255, 0.8) 4em);
-  border-radius: 50%;
+  font-size: 1.9em;
+  color: #436040;
   padding: 0.3em;
   padding-right: 0.6em;
-  box-shadow: black 5px 10px 5px;
   transition: 0.2s;
+  transform: scale(2, 1);
 }
-header h1:hover {
-  transform: scale(1.1);
+header #text-banner {
+  display: none;
+  position: fixed;
+  top: 2em;
+  left: -3em;
+  width: 150vw;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 2em;
+  color: #436040;
+  transform: skewX(-30deg);
+}
+header #head-square {
+  position: fixed;
+  top: -4em;
+  right: -2em;
+  background-color: #756752;
+  height: 9em;
+  width: 15em;
+  transform: skew(10deg, 15deg) rotateX(50deg);
+}
+header #head-circle {
+  position: fixed;
+  top: -9em;
+  left: -6em;
+  height: 13em;
+  width: 13em;
+  background-color: #D9EBC9;
+  border-radius: 50%;
 }
 
 #nav-mob #nav-icon {
@@ -51,10 +75,7 @@ header h1:hover {
   top: 0.5em;
   left: 0.5em;
   font-size: 3em;
-  color: #D9EBC9;
-}
-#nav-mob #nav-icon:hover {
-  color: #F2FDF1;
+  color: #436040;
 }
 #nav-mob #nav-links {
   position: fixed;
@@ -76,7 +97,7 @@ header h1:hover {
 }
 #nav-mob #nav-links li a, #nav-mob #nav-links li a:visited {
   text-decoration: none;
-  color: #D9EBC9;
+  color: #756752;
   font-style: italic;
 }
 #nav-mob #nav-links li a:hover {

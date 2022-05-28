@@ -11,6 +11,10 @@ $pale-orange: rgb(230, 100, 101);
 $karla: 'Karla', sans-serif;
 $eczar: 'Eczar', serif;
 $rammetto: 'Rammetto One', cursive;
+$unica: 'Unica One', cursive;
+$dela: 'Dela Gothic One', cursive;
+
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -24,7 +28,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-image: radial-gradient(farthest-side at 40% 50%, $pale-orange, $lavendar);
+    background-color: $white;
     font-family: $karla;
     font-size: 16px;
 }
@@ -34,29 +38,58 @@ header {
     z-index: 3; // layers elements depending on index value
     top: 0; // prevents header from dropping when I adjust <main>!
     width: 100vw;
-    height: 5.2em;
-    background-image: -webkit-linear-gradient(bottom, rgb(0,0,0,0) 10%, $purple);
+    height: 5.8em;
+    background-color: $white;
     backdrop-filter: blur(.2em);
-    box-shadow: 2em 2em 2em rgb(0,0,0,0);
-    // border-bottom: black dashed 0.2em;
+    // border-bottom: black solid 0.1em;
+    box-shadow: 1em 1em 1em $white;
     h1 {
         z-index: 2;
         position: fixed;
-        top: 0.3em;
+        top: 0.4em;
         right: 1.3em;
         font-family: $rammetto;
-        font-size: 1.8em;
-        color: $mint;
-        background-image: -webkit-linear-gradient(130deg, $pale-orange, rgb(0, 21, 255, 0.8) 4em);
-        border-radius: 50%;
+        font-size: 1.9em;
+        color: $pine;
         padding: 0.3em;
         padding-right: 0.6em;
-        box-shadow: black 5px 10px 5px;
         transition: 0.2s;
+        // mix-blend-mode: multiply;
+        transform: scale(2,1)
     }
-    h1:hover {
-        transform: scale(1.1)
+    #text-banner {
+        display: none; ///////////////////////
+        position: fixed;
+        top: 2em;
+        left: -3em;
+        width: 150vw;
+        font-family: $dela;
+        font-size: 2em;
+        // font-style: italic;
+        color: $pine;
+        transform: skewX(-30deg);
     }
+    #head-square {
+        position: fixed;
+        top: -4em;
+        right: -2em;
+        background-color: $brown;
+        height: 9em;
+        width: 15em;
+        transform: skew(10deg, 15deg) rotateX(50deg);
+    }
+    #head-circle {
+        position: fixed;
+        top: -9em;
+        left: -6em;
+        height: 13em;
+        width: 13em;
+        background-color: $mint;
+        border-radius: 50%;
+    }
+    // h1:hover {
+    //     transform: scale(1.1)   // DESK ONLY
+    // }
 
 }
 
@@ -68,10 +101,7 @@ header {
         top: 0.5em;
         left: 0.5em;
         font-size: 3em;
-        color: $mint;
-    }
-    #nav-icon:hover {
-        color: $white;
+        color: $pine;
     }
     #nav-links {
         position: fixed;
@@ -93,7 +123,7 @@ header {
             transition: 0.5s;
             a, a:visited {
                 text-decoration: none;
-                color: $mint;
+                color: $brown;
                 font-style: italic;
             }
             a:hover {
