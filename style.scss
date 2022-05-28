@@ -29,13 +29,14 @@ body {
 
 header {
     position: fixed; 
+    z-index: 3; // layers elements depending on index value
     top: 0; // prevents header from dropping when I adjust <main>!
     width: 100vw;
     height: 5.2em;
     background-color: $pine;
-    opacity: 90%;
+    opacity: 100%;
     // background-image: -webkit-linear-gradient(top, $pine 20%, $white);
-    box-shadow: 10px 10px 5px $white;
+    // box-shadow: 10px 10px 5px $white;
     h1 {
         position: fixed;
         top: 0.6em;
@@ -56,6 +57,7 @@ header {
 //   }
 #nav-mob {
     #nav-icon {
+        z-index: 4;
         position: fixed;
         top: 0.5em;
         left: 0.5em;
@@ -67,16 +69,19 @@ header {
     }
     #nav-links {
         position: fixed;
-        top: 5.5em;
-        left: -20em;
+        top: -20em;
+        left: 0em;
         transition: 0.2s;
+        ul {
+            background-color: $pine;
+            opacity: 100%;
+        }
         li {
             list-style: none;
             font-family: $karla;
             font-size: 2em;
-            border: 3px solid black;
+            // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
-            opacity: 90%;
             transition: 0.5s;
             a, a:visited {
                 text-decoration: none;
@@ -97,7 +102,7 @@ header {
     }
     #show:checked ~ #nav-links {
         display: block;
-        transform: translateX(17em);
+        transform: translateY(25.1em);
     }
     #show:checked ~ #nav-links li {
         background-color: $pine;

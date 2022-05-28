@@ -18,12 +18,12 @@ body {
 
 header {
   position: fixed;
+  z-index: 3;
   top: 0;
   width: 100vw;
   height: 5.2em;
   background-color: #436040;
-  opacity: 90%;
-  box-shadow: 10px 10px 5px #F2FDF1;
+  opacity: 100%;
 }
 header h1 {
   position: fixed;
@@ -35,6 +35,7 @@ header h1 {
 }
 
 #nav-mob #nav-icon {
+  z-index: 4;
   position: fixed;
   top: 0.5em;
   left: 0.5em;
@@ -46,17 +47,19 @@ header h1 {
 }
 #nav-mob #nav-links {
   position: fixed;
-  top: 5.5em;
-  left: -20em;
+  top: -20em;
+  left: 0em;
   transition: 0.2s;
+}
+#nav-mob #nav-links ul {
+  background-color: #436040;
+  opacity: 100%;
 }
 #nav-mob #nav-links li {
   list-style: none;
   font-family: "Karla", sans-serif;
   font-size: 2em;
-  border: 3px solid black;
   padding: 0.3em 0.3em 0.3em 3.5em;
-  opacity: 90%;
   transition: 0.5s;
 }
 #nav-mob #nav-links li a, #nav-mob #nav-links li a:visited {
@@ -73,7 +76,7 @@ header h1 {
 }
 #nav-mob #show:checked ~ #nav-links {
   display: block;
-  transform: translateX(17em);
+  transform: translateY(25.1em);
 }
 #nav-mob #show:checked ~ #nav-links li {
   background-color: #436040;
