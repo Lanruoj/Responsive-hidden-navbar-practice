@@ -71,7 +71,6 @@ header h1:hover {
   list-style: none;
   font-family: "Karla", sans-serif;
   font-size: 3em;
-  text-shadow: rgb(145, 152, 229) 5px 5px 1px;
   padding: 0.3em 0.3em 0.3em 3.5em;
   transition: 0.5s;
 }
