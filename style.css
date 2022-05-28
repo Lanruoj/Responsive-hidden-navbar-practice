@@ -11,7 +11,7 @@ html, body {
 body {
   box-sizing: border-box;
   position: relative;
-  background-image: radial-gradient(closest-side at 60% 10%, rgb(230, 100, 101), rgb(145, 152, 229));
+  background-image: radial-gradient(farthest-side at 40% 50%, rgb(230, 100, 101), rgb(145, 152, 229));
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
@@ -24,6 +24,7 @@ header {
   height: 5.2em;
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 10%, #4000FF);
   backdrop-filter: blur(0.2em);
+  box-shadow: 2em 2em 2em rgba(0, 0, 0, 0);
 }
 header h1 {
   z-index: 2;
@@ -33,11 +34,11 @@ header h1 {
   font-family: "Rammetto One", cursive;
   font-size: 1.8em;
   color: #D9EBC9;
-  background-color: rgba(0, 21, 255, 0.8);
+  background-image: -webkit-linear-gradient(130deg, rgb(230, 100, 101), rgba(0, 21, 255, 0.8) 4em);
   border-radius: 50%;
   padding: 0.3em;
   padding-right: 0.6em;
-  box-shadow: black 10px 0px 10px;
+  box-shadow: black 5px 10px 5px;
   transition: 0.2s;
 }
 header h1:hover {
@@ -63,12 +64,14 @@ header h1:hover {
 }
 #nav-mob #nav-links ul {
   height: 100vh;
+  padding-right: 5em;
   background-color: rgba(255, 255, 255, 0);
 }
 #nav-mob #nav-links li {
   list-style: none;
   font-family: "Karla", sans-serif;
   font-size: 3em;
+  text-shadow: rgb(145, 152, 229) 5px 5px 1px;
   padding: 0.3em 0.3em 0.3em 3.5em;
   transition: 0.5s;
 }

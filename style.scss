@@ -24,7 +24,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-image: radial-gradient(closest-side at 60% 10%, $pale-orange, $lavendar);
+    background-image: radial-gradient(farthest-side at 40% 50%, $pale-orange, $lavendar);
     font-family: $karla;
     font-size: 16px;
 }
@@ -37,7 +37,7 @@ header {
     height: 5.2em;
     background-image: -webkit-linear-gradient(bottom, rgb(0,0,0,0) 10%, $purple);
     backdrop-filter: blur(.2em);
-    // box-shadow: 0 0 5px 10px;
+    box-shadow: 2em 2em 2em rgb(0,0,0,0);
     // border-bottom: black dashed 0.2em;
     h1 {
         z-index: 2;
@@ -47,11 +47,11 @@ header {
         font-family: $rammetto;
         font-size: 1.8em;
         color: $mint;
-        background-color: rgb(0, 21, 255, 0.8);
+        background-image: -webkit-linear-gradient(130deg, $pale-orange, rgb(0, 21, 255, 0.8) 4em);
         border-radius: 50%;
         padding: 0.3em;
         padding-right: 0.6em;
-        box-shadow: black 10px 0px 10px;
+        box-shadow: black 5px 10px 5px;
         transition: 0.2s;
     }
     h1:hover {
@@ -80,12 +80,14 @@ header {
         transition: 0.2s;
         ul {
             height: 100vh; //makes the sidebar take up full vertical height
+            padding-right: 5em;
             background-color: rgb(255, 255, 255, 0);
         }
         li {
             list-style: none;
             font-family: $karla;
             font-size: 3em;
+            text-shadow: $lavendar 5px 5px 1px;
             // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
             transition: 0.5s;
