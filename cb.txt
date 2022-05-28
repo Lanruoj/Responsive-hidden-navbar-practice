@@ -1,0 +1,4 @@
+<aside id="welcome-window">
+            <h2>Welcome</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex tellus. Nulla et orci interdum, congue nisl in, ultricies massa. Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor sem, sed ullamcorper felis laoreet in.</p>
+        </aside>

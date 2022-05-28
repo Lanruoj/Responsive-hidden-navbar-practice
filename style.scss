@@ -1,7 +1,7 @@
 //COLOURS
 $white: #F2FDF1;
 $mint: #D9EBC9;
-$brown: #756752;
+$brown: #897e6d;
 $pine: #436040;
 $black: #161616;
 $purple: #4000FF;
@@ -13,6 +13,20 @@ $eczar: 'Eczar', serif;
 $rammetto: 'Rammetto One', cursive;
 $unica: 'Unica One', cursive;
 $dela: 'Dela Gothic One', cursive;
+$cousine: 'Cousine', monospace;
+//MIXINS
+@mixin card() {
+        border-radius: 2em 2em 2em 2em;
+        padding: 2em;
+        margin: 2em;
+        background-color: white;
+        h2 {
+            position: relative;
+            color: $pine;
+            text-align: left;
+            left: 2em;
+        }
+}
 
 
 * {
@@ -28,7 +42,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-color: $white;
+
     font-family: $karla;
     font-size: 16px;
 }
@@ -46,28 +60,28 @@ header {
     h1 {
         z-index: 2;
         position: fixed;
-        top: 0.4em;
-        right: 1.3em;
-        font-family: $rammetto;
-        font-size: 1.9em;
+        top: 0.1em;
+        right: 1.7em;
+        font-family: $cousine;
+        font-size: 3em;
         color: $pine;
         padding: 0.3em;
         padding-right: 0.6em;
         transition: 0.2s;
         // mix-blend-mode: multiply;
-        transform: scale(2,1)
+        transform: scale(2, 1) skewX(10deg);
     }
     #text-banner {
         display: none; ///////////////////////
-        position: fixed;
-        top: 2em;
-        left: -3em;
-        width: 150vw;
-        font-family: $dela;
-        font-size: 2em;
-        // font-style: italic;
-        color: $pine;
-        transform: skewX(-30deg);
+        // position: fixed;
+        // top: 2em;
+        // left: -3em;
+        // width: 100vw;
+        // font-family: $dela;
+        // font-size: 2em;
+        // // font-style: italic;
+        // color: rgb(163, 163, 145);
+        // transform: skewX(-30deg);
     }
     #head-square {
         position: fixed;
@@ -95,15 +109,15 @@ header {
 
 //MOBILE NAV MENU
 #nav-mob {
-    #nav-icon {
+    #nav-icon-mob {
         z-index: 4;
         position: fixed;
         top: 0.5em;
         left: 0.5em;
         font-size: 3em;
-        color: $pine;
+        color: $brown;
     }
-    #nav-links {
+    #nav-links-mob {
         position: fixed;
         top: 5.1em;
         left: -22.2em;
@@ -138,13 +152,16 @@ header {
     #show {
         display: none;
     }
-    #show:checked ~ #nav-links {
+    #show:checked ~ #nav-links-mob {
         display: block;
         transform: translateX(20em);
-        backdrop-filter: blur(.2em);
+        // backdrop-filter: blur(.2em);
     }
 }
 
+    #nav-icon-desk {
+        display: none;     ///// leave desk menu on
+    }
 
 
 main {
@@ -152,10 +169,146 @@ main {
     margin-top: 7em;
 }
 
+section {
+    @include card;
+}
 
-
-
-// REMOVE WHEN FINISHED MOBILE NAV
 #nav-desk {
     display: none;
 }
+
+
+//// DESKTOP VERSION
+
+@media only screen and (min-width: 800px) {
+    header {
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 15em;
+        h1 {
+            font-size: 5em;
+            top: 0.2em;
+            right: 2em;
+            font-family: $cousine;
+        }
+        #head-circle {
+            position: fixed;
+            // transform: scale(1.2);
+            left: -3em;
+        }
+        #head-square {
+            position: absolute;
+            top: -8em;
+            right: -8em;
+            background-color: $brown;
+            height: 18em;
+            width: 30em;
+        }
+        #text-banner {
+            display: none; /////////////////////
+            position: relative;
+            top: -0.7em;
+            left: -1.5em;
+        }
+    }
+    #nav-icon-mob {
+        display: none;
+    }
+    #nav-icon-desk {
+        display: block;
+        z-index: 11;
+        position: fixed;
+        top: 0.2em;
+        left: 0.5em;
+        font-size: 3em;
+        color: $brown;
+    }
+    // #nav-desk {
+    //     position: absolute;
+    //     ul {
+    //         background-color: $white;
+    //         height: 100vh; //makes the sidebar take up full vertical height
+    //         padding-right: 5em;
+    //         li {
+    //             font-size: 2em;
+    //             color: red;
+    //         }
+    //     }
+    // }
+    #nav-mob {
+        #nav-links-mob {
+            z-index: 10;
+            position: fixed;
+            top: 7em;
+            left: -22.2em;
+            transition: 0.2s;
+            // backdrop-filter: none;
+            
+            ul {
+                z-index: 10;
+                height: 100vh; //makes the sidebar take up full vertical height
+                padding-right: 5em;
+                background-color: $white;
+            }
+            li {
+                z-index: 10;
+                list-style: none;
+                font-family: $karla;
+                font-size: 3em;
+                // text-shadow: $lavendar 5px 5px 1px;
+                // border: 3px solid $pine;
+                padding: .3em .3em .3em 3.5em;
+                transition: 0.5s;
+                a, a:visited {
+                    text-decoration: none;
+                    color: $brown;
+                    font-style: italic;
+                }
+                a:hover {
+                    color: $white;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+    #show {
+        display: none;
+    }
+    #show:checked ~ #nav-links-mob {
+        display: block;
+        transform: translateX(20em);
+        // backdrop-filter: blur(.2em);
+    }
+    #nav-mob:hover ~ main {
+        transform: translateX(20em);
+    }
+
+    body {
+        background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
+    }
+    section {
+        @include card;
+        background-color: rgb(0,0,0,0);
+        h2 {
+            color: $pine;
+        }
+    }
+    main {
+        position: relative;
+        margin-top: -2em;
+        transition: 0.5s;
+    }
+
+    ::selection {
+        background: none;
+    }
+    
+
+
+
+
+
+
+}
+
