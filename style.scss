@@ -5,10 +5,12 @@ $brown: #756752;
 $pine: #436040;
 $black: #161616;
 $purple: #4000FF;
+$lavendar: rgb(145, 152, 229);
+$pale-orange: rgb(230, 100, 101);
 //FONTS
 $karla: 'Karla', sans-serif;
-
-
+$eczar: 'Eczar', serif;
+$rammetto: 'Rammetto One', cursive;
 * {
 	margin: 0px;
 	padding: 0px;
@@ -22,7 +24,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-image: radial-gradient(closest-side at 60% 8%, #e66465, #9198e5);
+    background-image: radial-gradient(closest-side at 60% 10%, $pale-orange, $lavendar);
     font-family: $karla;
     font-size: 16px;
 }
@@ -33,24 +35,29 @@ header {
     top: 0; // prevents header from dropping when I adjust <main>!
     width: 100vw;
     height: 5.2em;
-    background-color: white;
-    opacity: 20%;
-    // background-image: -webkit-linear-gradient(top, $pine 20%, $white);
-    // box-shadow: 10px 10px 5px $white;
+    background-image: -webkit-linear-gradient(bottom, rgb(0,0,0,0) 10%, $purple);
+    backdrop-filter: blur(.2em);
+    // box-shadow: 0 0 5px 10px;
+    // border-bottom: black dashed 0.2em;
     h1 {
+        z-index: 2;
         position: fixed;
         top: 0.3em;
         right: 1.3em;
-        font-family: $karla;
-        font-size: 2.1em;
+        font-family: $rammetto;
+        font-size: 1.8em;
         color: $mint;
-        opacity: 100%;
-        background-color: blue;
+        background-color: rgb(0, 21, 255, 0.8);
         border-radius: 50%;
-        padding: 0.4em;
+        padding: 0.3em;
         padding-right: 0.6em;
         box-shadow: black 10px 0px 10px;
+        transition: 0.2s;
     }
+    h1:hover {
+        transform: scale(1.1)
+    }
+
 }
 
 //MOBILE NAV MENU
@@ -73,8 +80,7 @@ header {
         transition: 0.2s;
         ul {
             height: 100vh; //makes the sidebar take up full vertical height
-            background-color: $pine;
-            opacity: 100%;
+            background-color: rgb(255, 255, 255, 0);
         }
         li {
             list-style: none;
@@ -103,11 +109,8 @@ header {
     #show:checked ~ #nav-links {
         display: block;
         transform: translateX(20em);
+        backdrop-filter: blur(.2em);
     }
-    #show:checked ~ #nav-links li {
-        background-color: $pine;
-    }
-
 }
 
 

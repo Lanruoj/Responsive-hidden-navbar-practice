@@ -11,7 +11,7 @@ html, body {
 body {
   box-sizing: border-box;
   position: relative;
-  background-image: radial-gradient(closest-side at 60% 8%, #e66465, #9198e5);
+  background-image: radial-gradient(closest-side at 60% 10%, rgb(230, 100, 101), rgb(145, 152, 229));
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
@@ -22,22 +22,26 @@ header {
   top: 0;
   width: 100vw;
   height: 5.2em;
-  background-color: white;
-  opacity: 20%;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 10%, #4000FF);
+  backdrop-filter: blur(0.2em);
 }
 header h1 {
+  z-index: 2;
   position: fixed;
   top: 0.3em;
   right: 1.3em;
-  font-family: "Karla", sans-serif;
-  font-size: 2.1em;
+  font-family: "Rammetto One", cursive;
+  font-size: 1.8em;
   color: #D9EBC9;
-  opacity: 100%;
-  background-color: blue;
+  background-color: rgba(0, 21, 255, 0.8);
   border-radius: 50%;
-  padding: 0.4em;
+  padding: 0.3em;
   padding-right: 0.6em;
   box-shadow: black 10px 0px 10px;
+  transition: 0.2s;
+}
+header h1:hover {
+  transform: scale(1.1);
 }
 
 #nav-mob #nav-icon {
@@ -59,8 +63,7 @@ header h1 {
 }
 #nav-mob #nav-links ul {
   height: 100vh;
-  background-color: #436040;
-  opacity: 100%;
+  background-color: rgba(255, 255, 255, 0);
 }
 #nav-mob #nav-links li {
   list-style: none;
@@ -84,9 +87,7 @@ header h1 {
 #nav-mob #show:checked ~ #nav-links {
   display: block;
   transform: translateX(20em);
-}
-#nav-mob #show:checked ~ #nav-links li {
-  background-color: #436040;
+  backdrop-filter: blur(0.2em);
 }
 
 main {
