@@ -1,9 +1,121 @@
+//COLOURS
+$white: #F2FDF1;
+$mint: #D9EBC9;
+$brown: #756752;
+$pine: #436040;
+$black: #161616;
+$purple: #4000FF;
+//FONTS
+$karla: 'Karla', sans-serif;
+
+
 * {
 	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
-	height: 100vh;
+	min-height: 100vh;
+}
+
+body {
+    box-sizing: border-box;
+    position: relative;
+    background-color: $white;
+    font-family: $karla;
+    font-size: 16px;
+}
+
+header {
+    position: fixed; 
+    top: 0; // prevents header from dropping when I adjust <main>!
+    width: 100vw;
+    height: 5.2em;
+    background-color: $pine;
+    opacity: 90%;
+    // background-image: -webkit-linear-gradient(top, $pine 20%, $white);
+    box-shadow: 10px 10px 5px $white;
+    h1 {
+        position: fixed;
+        top: 0.6em;
+        right: 2em;
+        font-family: $karla;
+        font-size: 2.5em;
+        color: $mint;
+    }
+}
+
+//MOBILE NAV MENU
+//   #show {
+//     display: none;
+//   }
+  
+//   #show:checked ~ #nav-links {
+//     display: block;
+//   }
+#nav-mob {
+    #nav-icon {
+        position: fixed;
+        top: 0.5em;
+        left: 0.5em;
+        font-size: 3em;
+        color: $mint;
+    }
+    #nav-icon:hover {
+        color: $white;
+    }
+    #nav-links {
+        position: fixed;
+        top: 5.5em;
+        left: -20em;
+        transition: 0.2s;
+        li {
+            list-style: none;
+            font-family: $karla;
+            font-size: 2em;
+            border: 3px solid black;
+            padding: .3em .3em .3em 3.5em;
+            opacity: 90%;
+            transition: 0.5s;
+            a, a:visited {
+                text-decoration: none;
+                color: $mint;
+                font-style: italic;
+            }
+            a:hover {
+                color: $white;
+                font-style: normal;
+            }
+        }
+        // li:hover {
+        //     // opacity: 95%; //ADD TO DESK
+        // }
+    }
+    #show {
+        display: none;
+    }
+    #show:checked ~ #nav-links {
+        display: block;
+        transform: translateX(17em);
+    }
+    #show:checked ~ #nav-links li {
+        background-color: $pine;
+    }
+
+}
+
+
+
+main {
+    margin: 2em;
+    margin-top: 7em;
+}
+
+
+
+
+// REMOVE WHEN FINISHED MOBILE NAV
+#nav-desk {
+    display: none;
 }
