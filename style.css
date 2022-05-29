@@ -24,7 +24,7 @@ header {
   height: 5.8em;
   background-color: #F2FDF1;
   backdrop-filter: blur(0.2em);
-  box-shadow: 1em 1em 1em #F2FDF1;
+  box-shadow: gray 2em 0.1em 0.5em;
 }
 header h1 {
   z-index: 2;
@@ -138,6 +138,7 @@ p {
     overflow: hidden !important;
     width: 100vw;
     height: 15em;
+    box-shadow: none;
   }
   header h1 {
     font-size: 5em;
@@ -268,7 +269,6 @@ p {
     position: relative;
     margin-top: -2em;
     transition: 0.5s;
-    height: 150vh;
   }
 
   p {

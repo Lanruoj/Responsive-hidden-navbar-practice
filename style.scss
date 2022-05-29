@@ -55,8 +55,8 @@ header {
     height: 5.8em;
     background-color: $white;
     backdrop-filter: blur(.2em);
-    // border-bottom: black solid 0.1em;
-    box-shadow: 1em 1em 1em $white;
+    box-shadow: gray 2em 0.1em 0.5em;
+    // box-shadow: 1em 1em 1em $white;
     h1 {
         z-index: 2;
         position: fixed;
@@ -188,6 +188,7 @@ p {
         overflow: hidden !important;
         width: 100vw;
         height: 15em;
+        box-shadow: none;
         h1 {
             font-size: 5em;
             top: 0.2em;
@@ -339,7 +340,7 @@ p {
         position: relative;
         margin-top: -2em;
         transition: 0.5s;
-        height: 150vh;
+        // height: 150vh;
     }
 
     p{
