@@ -13,6 +13,7 @@ main {
     position: absolute;
     left: 0px;
     transition: 1s;
+
 }
 #nav-desk {
     position: absolute;
@@ -44,4 +45,9 @@ header:hover ~ #box {
     height: 200px;
     width: 200px;
     background-color: blue;
+}
+
+section {
+    padding: 20px;
+    white-space: no-wrap;
 }
