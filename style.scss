@@ -170,7 +170,7 @@ main {
 
 section {
     @include card;
-    background-color: rgb(255,255,255,0.);
+    background-color: rgb(255,255,255,0.1);
 }
 
 p {
@@ -282,7 +282,7 @@ p {
                 z-index: 10;
                 position: fixed;
                 // height: min-content; //makes the sidebar take up full vertical height
-                // top: 3em;
+                // // top: 3em;
                 // left: 3em;
                 margin-left: 3em;
                 margin-top: 3em;
@@ -292,6 +292,7 @@ p {
                 border-radius: 50%;
                 background-color: $white;
                 box-shadow: $white 0em 0em 3em 3em;
+                transform: rotate(-40deg);
                 // opacity: 0%; //////// prevents menu wrapping to other side when hidden
                 // transform: skewX(-10deg);
                 // border: blue dashed 30px;
@@ -304,18 +305,28 @@ p {
                 font-size: 2.3em;
                 // text-shadow: $lavendar 5px 5px 1px;
                 // // border: 3px solid $pine;
-                padding: .3em .3em .3em 2em;
+                padding: .2em .3em .1em 2em;
                 transition: 0.5s;
+                transform: rotate(40deg);
                 a, a:visited {
                     text-decoration: none;
                     color: $brown;
                     font-style: italic;
+                    text-decoration: line-through;
                     transition: 0.2s;
                 }
                 a:hover {
                     color: $pale-orange;
+                    font-family: Monaco, monospace;
                     font-style: normal;
-                    text-decoration: line-through;
+                    text-decoration: none;
+                    text-transform: lowercase;
+                }
+                a:hover::before {
+                    content: '<';
+                }
+                a:hover::after {
+                    content: '>';
                 }
             }
         }
@@ -346,7 +357,7 @@ p {
     }
     section {
         @include card;
-        background-color: rgb(0,0,0,0);
+        background-color: rgb(255,255,255,0.1);
         margin: 2em 0em 0em 2em;
         h2 {
             color: $pine;
@@ -362,14 +373,14 @@ p {
     p{
         font-size: 1.2em;
     }
+    p::selection {
+        background-color: white;
+    }
 
     ::selection {
         background: none;
     }
     
-
-
-
 
 
 
