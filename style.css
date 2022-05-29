@@ -11,6 +11,7 @@ html, body {
 body {
   box-sizing: border-box;
   position: relative;
+  background-color: #F2FDF1;
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
@@ -113,13 +114,18 @@ main {
 section {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
-  margin: 2em;
+  margin: 0em;
+  margin-top: 2em;
   background-color: white;
 }
 section h2 {
   color: #436040;
   text-align: left;
   left: 2em;
+}
+
+p {
+  font-size: 2em;
 }
 
 #nav-desk {
@@ -176,6 +182,7 @@ section h2 {
   #nav-icon-desk:hover {
     color: rgb(230, 100, 101);
     transform: scale(1.2);
+    cursor: pointer;
   }
 
   #nav-mob #nav-links-mob {
@@ -242,9 +249,11 @@ section h2 {
   section {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 2em;
+    margin: 0em;
+    margin-top: 2em;
     background-color: white;
     background-color: rgba(0, 0, 0, 0);
+    margin: 2em 0em 0em 2em;
   }
   section h2 {
     color: #436040;
@@ -260,6 +269,10 @@ section h2 {
     margin-top: -2em;
     transition: 0.5s;
     height: 150vh;
+  }
+
+  p {
+    font-size: 1.2em;
   }
 
   ::selection {

@@ -18,7 +18,8 @@ $cousine: 'Cousine', monospace;
 @mixin card() {
         border-radius: 2em 2em 2em 2em;
         padding: 2em;
-        margin: 2em;
+        margin: 0em;
+        margin-top: 2em;
         background-color: white;
         h2 {
             color: $pine;
@@ -41,7 +42,7 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-
+    background-color: $white;
     font-family: $karla;
     font-size: 16px;
 }
@@ -170,6 +171,10 @@ section {
     @include card;
 }
 
+p {
+    font-size: 2em;
+}
+
 #nav-desk {
     display: none;
 }
@@ -222,10 +227,12 @@ section {
         font-size: 3em;
         color: $brown;
         transition: 0.1s;
+        
     }
     #nav-icon-desk:hover {
         color: $pale-orange;
         transform: scale(1.2);
+        cursor: pointer;
     }
     // #nav-desk {
     //     position: absolute;
@@ -251,6 +258,7 @@ section {
             // transform: skewX(-10deg);
             border-radius: 50%;
             border: blue dotted 2em;
+
             // backdrop-filter: none;
             
             ul {
@@ -303,9 +311,17 @@ section {
         transform: translateX(20em);
         // backdrop-filter: blur(.2em);
     }
+    #show:checked ~ #nav-links-mob ul {
+
+
+    }
     #nav-mob:hover ~ main {
         transform: translateX(20em);
     }
+    // #nav-links-mob:hover {
+    //     transform: rotate(30deg);
+    // }
+
 
     body {
         background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
@@ -314,6 +330,7 @@ section {
     section {
         @include card;
         background-color: rgb(0,0,0,0);
+        margin: 2em 0em 0em 2em;
         h2 {
             color: $pine;
         }
@@ -323,6 +340,10 @@ section {
         margin-top: -2em;
         transition: 0.5s;
         height: 150vh;
+    }
+
+    p{
+        font-size: 1.2em;
     }
 
     ::selection {
