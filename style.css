@@ -93,10 +93,6 @@ header #head-circle {
   color: #897e6d;
   font-style: italic;
 }
-#nav-mob #nav-links-mob li a:hover {
-  color: rgb(230, 100, 101);
-  font-style: normal;
-}
 #nav-mob #show {
   display: none;
 }
@@ -175,10 +171,12 @@ section h2 {
     left: 0.5em;
     font-size: 3em;
     color: #897e6d;
+    transition: 0.1s;
   }
 
   #nav-icon-desk:hover {
     color: rgb(230, 100, 101);
+    transform: scale(1.2);
   }
 
   #nav-mob #nav-links-mob {
@@ -216,10 +214,12 @@ section h2 {
     text-decoration: none;
     color: #897e6d;
     font-style: italic;
+    transition: 0.2s;
   }
   #nav-mob #nav-links-mob li a:hover {
     color: rgb(230, 100, 101);
     font-style: normal;
+    text-decoration: line-through;
   }
 
   #show {

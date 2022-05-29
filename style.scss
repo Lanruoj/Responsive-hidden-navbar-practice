@@ -142,10 +142,6 @@ header {
                 color: $brown;
                 font-style: italic;
             }
-            a:hover {
-                color: $pale-orange;
-                font-style: normal;
-            }
         }
         // li:hover {
         //     // opacity: 95%; //ADD TO DESK
@@ -226,9 +222,11 @@ section {
         left: 0.5em;
         font-size: 3em;
         color: $brown;
+        transition: 0.1s;
     }
     #nav-icon-desk:hover {
         color: $pale-orange;
+        transform: scale(1.2);
     }
     // #nav-desk {
     //     position: absolute;
@@ -288,10 +286,12 @@ section {
                     text-decoration: none;
                     color: $brown;
                     font-style: italic;
+                    transition: 0.2s;
                 }
                 a:hover {
                     color: $pale-orange;
                     font-style: normal;
+                    text-decoration: line-through;
                 }
             }
         }
@@ -307,7 +307,6 @@ section {
     #nav-mob:hover ~ main {
         transform: translateX(20em);
     }
-
 
     body {
         background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
