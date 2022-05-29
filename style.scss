@@ -42,9 +42,10 @@ html, body {
 body {
     box-sizing: border-box;
     position: relative;
-    background-color: $white;
+    // background-color: $white;
     font-family: $karla;
     font-size: 16px;
+    background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
 }
 
 header {
@@ -60,10 +61,10 @@ header {
     h1 {
         z-index: 2;
         position: fixed;
-        top: 0.1em;
-        right: 1.7em;
+        top: 0.9em;
+        right: 2.2em;
         font-family: $cousine;
-        font-size: 2em;
+        font-size: 1.5em;
         color: $purple;
         padding: 0.3em;
         padding-right: 0.6em;
@@ -169,15 +170,31 @@ main {
 
 section {
     @include card;
+    background-color: rgb(255,255,255,0.);
 }
 
 p {
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 #nav-desk {
     display: none;
 }
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 
 //// DESKTOP VERSION
@@ -189,9 +206,9 @@ p {
         width: 100vw;
         height: 15em;
         h1 {
-            font-size: 5em;
-            top: 0.2em;
-            right: 2em;
+            font-size: 3.5em;
+            top: 0.4em;
+            right: 3em;
             font-family: $cousine;
         }
         #head-circle {
