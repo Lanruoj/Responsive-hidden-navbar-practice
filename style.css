@@ -77,8 +77,9 @@ header #head-circle {
 #nav-mob #nav-links-mob ul {
   height: 100vh;
   padding-right: 5em;
+  width: 85vw;
   background-color: #F2FDF1;
-  box-shadow: 0em 0em 5em 5em #F2FDF1;
+  box-shadow: 0em 0em 1em 5em #F2FDF1;
 }
 #nav-mob #nav-links-mob li {
   list-style: none;
