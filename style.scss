@@ -37,6 +37,14 @@ header:hover ~ #box {
     position: absolute;
     left: 200px;
 }
+#nav-desk:hover {
+    position: absolute;
+    left: 200px;
+}
+#nav-desk:hover ~ main {
+    position: absolute;
+    left: 200px;
+}
 
 #box {
     position: absolute;
@@ -49,5 +57,4 @@ header:hover ~ #box {
 
 section {
     padding: 20px;
-    white-space: no-wrap;
 }
