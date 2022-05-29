@@ -129,7 +129,7 @@ section h2 {
 @media only screen and (min-width: 800px) {
   header {
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     width: 100vw;
     height: 15em;
   }
@@ -236,6 +236,7 @@ section h2 {
 
   body {
     background-image: radial-gradient(circle at bottom right, #e66465 10%, #F2FDF1, #F2FDF1);
+    overflow-x: hidden;
   }
 
   section {

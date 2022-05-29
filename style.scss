@@ -180,7 +180,7 @@ section {
 @media only screen and (min-width: 800px) {
     header {
         position: relative;
-        overflow: hidden;
+        overflow: hidden !important;
         width: 100vw;
         height: 15em;
         h1 {
@@ -309,6 +309,7 @@ section {
 
     body {
         background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
+        overflow-x: hidden;
     }
     section {
         @include card;
