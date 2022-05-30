@@ -1,10 +1,10 @@
 //COLOURS
-$white: #F2FDF1;
-$mint: #D9EBC9;
-$brown: #897e6d;
-$pine: #436040;
-$black: #161616;
-$purple: #4000FF;
+$white: rgb(242, 253, 241);
+$mint: rgb(217, 235, 201);
+$brown: rgb(137, 126, 109);
+$pine: rgb(67, 96, 64);
+$black: rgb(22, 22, 22);
+$purple: rgb(64, 0, 255);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 //FONTS
@@ -171,7 +171,7 @@ main {
 
 section {
     @include card;
-    background-color: rgb(255,255,255,0.1);
+    background-color: rgb(242, 253, 241, 0.1);
 }
 
 p {
@@ -408,7 +408,7 @@ footer {
 
     section {
         @include card;
-        background-color: rgb(255,255,255,0.1);
+        background-color: rgb(242, 253, 241, 0.1);
         // box-shadow: blue 2em 2em 2em;
         margin: 2em 0em 0em 2em;
         width: 100vw;
@@ -560,15 +560,17 @@ footer {
             position: fixed;
             bottom: 0.5em;
             right: 0.5em;
-            background-color: $purple;
+            background-color: rgb(53, 0, 213);
             color: $white;
             border-radius: 0.4em 0.4em 0.4em 0.4em;
             font-size: 1em;
             padding: 0.5em;
             border: none;
+            transition: 0.1s;
         }
         #contact-button:hover {
             cursor: pointer;
+            background-color: $purple;
         }
     }
 
