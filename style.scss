@@ -355,27 +355,53 @@ p {
         background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
         overflow-x: hidden;
     }
-    section {
-        @include card;
-        background-color: rgb(255,255,255,0.1);
-        margin: 2em 0em 0em 2em;
-        h2 {
-            color: $pine;
-        }
-    }
     main {
         position: relative;
         margin-top: -2em;
         transition: 0.5s;
         height: 150vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
     }
 
+    section {
+        @include card;
+        background-color: rgb(255,255,255,0.1);
+        margin: 2em 0em 0em 2em;
+        width: 40vw;
+        height: 40vw;
+        transition: 0.5s;
+        overflow: hidden;
+        h2 {
+            color: $pine;
+        }
+    }
+    section:hover {
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        height: 50vw;
+        overflow:auto;
+    }
+    // #sec-intro:hover + #sec-1 {
+    //     background-color: red;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     height: 50vw;
+    // }
+    #sec-1 {
+        flex-wrap: nowrap;
+    }
     p{
         font-size: 1.2em;
     }
     p::selection {
         background-color: white;
     }
+
 
     ::selection {
         background: none;

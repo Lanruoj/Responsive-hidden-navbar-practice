@@ -258,6 +258,18 @@ p {
     overflow-x: hidden;
   }
 
+  main {
+    position: relative;
+    margin-top: -2em;
+    transition: 0.5s;
+    height: 150vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
   section {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
@@ -266,6 +278,10 @@ p {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 2em 0em 0em 2em;
+    width: 40vw;
+    height: 40vw;
+    transition: 0.5s;
+    overflow: hidden;
   }
   section h2 {
     color: #436040;
@@ -276,11 +292,16 @@ p {
     color: #436040;
   }
 
-  main {
-    position: relative;
-    margin-top: -2em;
-    transition: 0.5s;
-    height: 150vh;
+  section:hover {
+    background-color: #F2FDF1;
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    height: 50vw;
+    overflow: auto;
+  }
+
+  #sec-1 {
+    flex-wrap: nowrap;
   }
 
   p {
