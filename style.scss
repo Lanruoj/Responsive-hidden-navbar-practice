@@ -388,6 +388,12 @@ footer {
     //     transform: rotate(30deg);
     // }
 
+/////
+
+
+
+
+
 
     body {
         background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
@@ -409,7 +415,6 @@ footer {
     section {
         @include card;
         background-color: rgb(242, 253, 241, 0.1);
-        // box-shadow: blue 2em 2em 2em;
         margin: 2em 0em 0em 2em;
         width: 100vw;
         max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
@@ -441,7 +446,7 @@ footer {
     }
     #expand:checked ~ #sec-intro {
         background-color: $white;
-        box-shadow: gray 0em 0em 2em;
+        // box-shadow: gray 0em 0em 2em;
         width: 100vw;
         max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
         flex-wrap: nowrap;
@@ -466,8 +471,25 @@ footer {
     }
     //////////////
 
-
-
+    ///// HOVER TO FOCUS SECTION v2
+    section:hover {
+            background-color: $white;
+            box-shadow: gray 0em 0em 2em;
+            width: 100vw;
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            // overflow:auto;
+        }
+    #expand:hover ~ #sec-intro {
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+        // -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        //     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        // overflow:auto;
+    }
+        ////
 
     ///////////// HOVER TO READ MORE OVERLAY
     // .expand-cont {

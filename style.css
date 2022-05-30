@@ -346,7 +346,6 @@ footer #contact-button {
 
   #expand:checked ~ #sec-intro {
     background-color: rgb(242, 253, 241);
-    box-shadow: gray 0em 0em 2em;
     width: 100vw;
     max-height: 100vw;
     flex-wrap: nowrap;
@@ -369,6 +368,21 @@ footer #contact-button {
 
   #expand-icon:hover {
     transform: scale(1.2);
+  }
+
+  section:hover {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  #expand:hover ~ #sec-intro {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    flex-wrap: nowrap;
   }
 
   p {
