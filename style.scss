@@ -46,6 +46,7 @@ body {
     font-family: $karla;
     font-size: 16px;
     background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
+    background-attachment: fixed; /// FIXES BACKGROUND GRADIENT WHEN SCROLL
 }
 
 header {
@@ -177,8 +178,44 @@ p {
     font-size: 1.2em;
 }
 
+footer {
+    position: fixed;
+    bottom: 0em;
+    text-align: center;
+    background-color: $white;
+    width: 150vw;
+    // box-shadow: gray 0em 0em 0.2em 0.1em;
+    border: rgb(183, 183, 183) 1px solid;
+    form {
+        background-color: $white;
+        width: 3em;
+        height: 3em;
+        bottom: 0em;
+    }
+    #contact-button {
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
+        background-color: $purple;
+        color: $white;
+        border-radius: 0.4em 0.4em 0.4em 0.4em;
+        font-size: 1em;
+        padding: 0.5em;
+        border: none;
+    }
+}
+
+
+
+
+
 #nav-desk {
     display: none;
+}
+
+.expand,
+.expand-cont {
+    display: none;   ////////// hover text not on mobile
 }
 
 
@@ -357,6 +394,7 @@ p {
     }
     main {
         position: relative;
+        margin-bottom: 30em;  //// adds space to bottom of main for footer
         margin-top: -2em;
         transition: 0.5s;
         height: 150vh;
@@ -364,37 +402,100 @@ p {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        align-content: flex-start;
+        // align-content: flex-start;
     }
 
     section {
         @include card;
         background-color: rgb(255,255,255,0.1);
+        // box-shadow: blue 2em 2em 2em;
         margin: 2em 0em 0em 2em;
-        width: 40vw;
-        height: 40vw;
-        transition: 0.5s;
+        width: 100vw;
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
         overflow: hidden;
+        position: relative;
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         h2 {
             color: $pine;
         }
     }
+
+    /////////////// EXPAND SYMBOL ON TOP RIGHT
+    // .expand {
+    //     opacity: 1;
+    //     color: $purple;
+    //     font-size: 1.2em;
+    // }
+    // .blur {
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     margin-right: 3em;
+    // }
+    //////////////
+
+    ///////////// HOVER TO READ MORE OVERLAY
+    .expand-cont {
+        display: flex;
+        justify-content: flex-end;
+        // margin-right: 0em;
+        position: absolute;
+        transition: 0.5s;
+        top: 5em;
+        left: 5em;
+        .expand {
+            display: inline-block;
+            opacity: 1;
+            color: $brown;
+            font-size: 10em;
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+    }
+    section:hover > .expand-cont {
+        // transform: translateY(-50em);
+        opacity: 0;
+        filter: blur(2em);
+    }
+    /////////////
+
+
+
     section:hover {
         background-color: $white;
         box-shadow: gray 0em 0em 2em;
         width: 100vw;
-        height: 50vw;
-        overflow:auto;
+        max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+        flex-wrap: nowrap;
+        -webkit-mask-image: none;
+        mask-image: none;
+        // overflow:auto;
     }
+
+    /////// BOTTOM BLUR DISSAPPEARS WHEN CARD ENLARGED
+
+
+    
+    
     // #sec-intro:hover + #sec-1 {
     //     background-color: red;
     //     box-shadow: gray 0em 0em 2em;
     //     width: 100vw;
     //     height: 50vw;
     // }
-    #sec-1 {
-        flex-wrap: nowrap;
-    }
+    // #sec-intro {
+    //     order: 0;
+    // }
+    // #sec-1 {
+    //     order: 1;
+    // }
+    // #sec-2 {
+    //     order: 2;
+    // }
+    // #sec-3 {
+    //     order: 3;
+    // }
     p{
         font-size: 1.2em;
     }
@@ -407,8 +508,39 @@ p {
         background: none;
     }
     
+    footer {
+        position: fixed;
+        bottom: 0em;
+        text-align: center;
+        background-color: $white;
+        width: 150vw;
+        // box-shadow: gray 0em 0em 0.2em 0.1em;
+        border: rgb(183, 183, 183) 1px solid;
+        form {
+            background-color: $white;
+            width: 3em;
+            height: 3em;
+            bottom: 0em;
+        }
+        #contact-button {
+            position: fixed;
+            bottom: 0.5em;
+            right: 0.5em;
+            background-color: $purple;
+            color: $white;
+            border-radius: 0.4em 0.4em 0.4em 0.4em;
+            font-size: 1em;
+            padding: 0.5em;
+            border: none;
+        }
+        #contact-button:hover {
+            cursor: pointer;
+        }
+    }
+
 
 
 
 }
 
+///////////////////////////////////////

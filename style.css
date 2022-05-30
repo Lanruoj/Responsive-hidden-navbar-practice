@@ -14,6 +14,7 @@ body {
   font-family: "Karla", sans-serif;
   font-size: 16px;
   background-image: radial-gradient(circle at bottom right, #e66465 10%, #F2FDF1, #F2FDF1);
+  background-attachment: fixed;
 }
 
 header {
@@ -129,7 +130,38 @@ p {
   font-size: 1.2em;
 }
 
+footer {
+  position: fixed;
+  bottom: 0em;
+  text-align: center;
+  background-color: #F2FDF1;
+  width: 150vw;
+  border: rgb(183, 183, 183) 1px solid;
+}
+footer form {
+  background-color: #F2FDF1;
+  width: 3em;
+  height: 3em;
+  bottom: 0em;
+}
+footer #contact-button {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  background-color: #4000FF;
+  color: #F2FDF1;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+}
+
 #nav-desk {
+  display: none;
+}
+
+.expand,
+.expand-cont {
   display: none;
 }
 
@@ -260,6 +292,7 @@ p {
 
   main {
     position: relative;
+    margin-bottom: 30em;
     margin-top: -2em;
     transition: 0.5s;
     height: 150vh;
@@ -267,7 +300,6 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-content: flex-start;
   }
 
   section {
@@ -278,10 +310,13 @@ p {
     background-color: white;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 2em 0em 0em 2em;
-    width: 40vw;
-    height: 40vw;
+    width: 100vw;
+    max-height: 40vw;
     transition: 0.5s;
     overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
   section h2 {
     color: #436040;
@@ -292,16 +327,36 @@ p {
     color: #436040;
   }
 
+  .expand-cont {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    transition: 0.5s;
+    top: 5em;
+    left: 5em;
+  }
+  .expand-cont .expand {
+    display: inline-block;
+    opacity: 1;
+    color: #897e6d;
+    font-size: 10em;
+    opacity: 0.5;
+    transform: rotate(5deg);
+  }
+
+  section:hover > .expand-cont {
+    opacity: 0;
+    filter: blur(2em);
+  }
+
   section:hover {
     background-color: #F2FDF1;
     box-shadow: gray 0em 0em 2em;
     width: 100vw;
-    height: 50vw;
-    overflow: auto;
-  }
-
-  #sec-1 {
+    max-height: 100vw;
     flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   p {
@@ -314,6 +369,35 @@ p {
 
   ::selection {
     background: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0em;
+    text-align: center;
+    background-color: #F2FDF1;
+    width: 150vw;
+    border: rgb(183, 183, 183) 1px solid;
+  }
+  footer form {
+    background-color: #F2FDF1;
+    width: 3em;
+    height: 3em;
+    bottom: 0em;
+  }
+  footer #contact-button {
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    background-color: #4000FF;
+    color: #F2FDF1;
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+  }
+  footer #contact-button:hover {
+    cursor: pointer;
   }
 }
 
