@@ -360,6 +360,7 @@ footer #contact-button {
 
   #expand-text {
     display: inline-block;
+    font-family: "Monaco", monospace;
     font-size: 1em;
     right: 0.8em;
     top: 3.7em;
