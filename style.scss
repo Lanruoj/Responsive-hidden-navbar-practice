@@ -213,8 +213,9 @@ footer {
     display: none;
 }
 
-.expand,
-.expand-cont {
+#expand,
+#expand-icon,
+#expand-text {
     display: none;   ////////// hover text not on mobile
 }
 
@@ -450,9 +451,11 @@ footer {
     }
 
     #expand-icon {
+        display: inline-block;
         transition: 0.1s;
     }
     #expand-text {
+        display: inline-block;
         font-size: 1em;
         right: 0.8em;
         top: 3.7em;
