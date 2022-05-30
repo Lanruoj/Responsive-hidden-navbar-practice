@@ -7,6 +7,7 @@ $black: rgb(22, 22, 22);
 $purple: rgb(64, 0, 255);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
+$clear: rgb(255,255,255,0);
 //FONTS
 $karla: 'Karla', sans-serif;
 $eczar: 'Eczar', serif;
@@ -14,13 +15,14 @@ $rammetto: 'Rammetto One', cursive;
 $unica: 'Unica One', cursive;
 $dela: 'Dela Gothic One', cursive;
 $cousine: 'Cousine', monospace;
+$monaco: 'Monaco', monospace;
 //MIXINS
 @mixin card() {
-        border-radius: 2em 2em 2em 2em;
+        border-radius: 2em 2em 2em 2em;   
         padding: 2em;
         margin: 0em;
         margin-top: 2em;
-        background-color: white;
+        background-color: rgb(242, 253, 241, 0.1); // no $ cos adjust
         h2 {
             color: $pine;
             text-align: left;
@@ -32,7 +34,7 @@ $cousine: 'Cousine', monospace;
 * {
 	margin: 0px;
 	padding: 0px;
-    box-sizing: border-box;
+    box-sizing: border-box; // makes it easier to size/pad/margin items
 }
 
 html, body {
@@ -40,27 +42,26 @@ html, body {
 }
 
 body {
-    box-sizing: border-box;
-    position: relative;
-    // background-color: $white;
+    position: relative; // allows me to {fix} other items
+    background-color: $white; // just in case gradient doesn't work
     font-family: $karla;
     font-size: 16px;
-    background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
-    background-attachment: fixed; /// FIXES BACKGROUND GRADIENT WHEN SCROLL
+    background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // red circle gradient from bottom right
+    background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
 }
 
+//////// HEADER MODULE
 header {
-    position: fixed; 
+    position: fixed; // keeps header/navbar at top when scrolling
     z-index: 3; // layers elements depending on index value
     top: 0; // prevents header from dropping when I adjust <main>!
     width: 100vw;
     height: 5.8em;
     background-color: $white;
-    backdrop-filter: blur(.2em);
-    // border-bottom: black solid 0.1em;
-    box-shadow: 1em 1em 1em $white;
+    backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
+    box-shadow: 0 0 0.2em gray; // slight box shadow
     h1 {
-        z-index: 2;
+        z-index: 2; // title on top of shape
         position: fixed;
         top: 0.9em;
         right: 2.2em;
@@ -70,20 +71,8 @@ header {
         padding: 0.3em;
         padding-right: 0.6em;
         transition: 0.2s;
-        // mix-blend-mode: multiply;
-        transform: scale(2, 1) skewX(10deg);
-    }
-    #text-banner {
-        display: none; ///////////////////////
-        // position: fixed;
-        // top: 2em;
-        // left: -3em;
-        // width: 100vw;
-        // font-family: $dela;
-        // font-size: 2em;
-        // // font-style: italic;
-        // color: rgb(163, 163, 145);
-        // transform: skewX(-30deg);
+        mix-blend-mode: multiply; // darkens title when meets brown square
+        transform: scale(2, 1) skewX(10deg); // skews title
     }
     #head-square {
         position: fixed;
@@ -103,13 +92,9 @@ header {
         background-color: $mint;
         border-radius: 50%;
     }
-    // h1:hover {
-    //     transform: scale(1.1)   // DESK ONLY
-    // }
-
 }
 
-//MOBILE NAV MENU
+////////////MOBILE NAV MENU
 #nav-mob {
     #nav-icon-mob {
         z-index: 4;
@@ -124,7 +109,7 @@ header {
         top: 5.1em;
         left: -22.2em;
         transition: 0.2s;
-        ul {
+        ul { 
             height: 100vh; //makes the sidebar take up full vertical height
             padding-right: 5em;
             width: 85vw;
@@ -135,35 +120,29 @@ header {
             list-style: none;
             font-family: $karla;
             font-size: 3em;
-            // text-shadow: $lavendar 5px 5px 1px;
-            // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
             transition: 0.5s;
-            a, a:visited {
+            a, a:visited { // changing the menu link style
                 text-decoration: none;
                 color: $brown;
                 font-style: italic;
             }
         }
-        // li:hover {
-        //     // opacity: 95%; //ADD TO DESK
-        // }
     }
     #show {
-        display: none;
+        display: none; // HIDES ACTUAL CHECKBOX
     }
-    #show:checked ~ #nav-links-mob {
-        display: block;
-        transform: translateX(20em);
-        // backdrop-filter: blur(.2em);
+    #show:checked ~ #nav-links-mob {  // 
+        display: block; // stop being hidden
+        transform: translateX(20em); // slide in from left
     }
 }
 
     #nav-icon-desk {
-        display: none;     ///// leave desk menu on
+        display: none; // hides desktop menu icon
     }
 
-
+///////MAIN SECTION    
 main {
     margin: 2em;
     margin-top: 7em;
@@ -175,17 +154,18 @@ section {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.2em; // make a bit easier to read on mobile
 }
 
+
+//////FOOTER/CONTACT BAR
 footer {
     position: fixed;
     bottom: 0em;
     text-align: center;
     background-color: $white;
-    width: 150vw;
-    // box-shadow: gray 0em 0em 0.2em 0.1em;
-    border: rgb(183, 183, 183) 1px solid;
+    width: 100vw;
+    box-shadow: 0 0 0.2em gray;
     form {
         background-color: $white;
         width: 3em;
@@ -201,22 +181,20 @@ footer {
         border-radius: 0.4em 0.4em 0.4em 0.4em;
         font-size: 1em;
         padding: 0.5em;
-        border: none;
+        border: none; // removed default "button" border
     }
 }
 
 
 
-
-
 #nav-desk {
-    display: none;
+    display: none;  // hides desktop menu
 }
 
 #expand,
 #expand-icon,
 #expand-text {
-    display: none;   ////////// hover text not on mobile
+    display: none;   ////////// card expand text/icon not on mobile
 }
 
 
@@ -238,20 +216,25 @@ footer {
 //// DESKTOP VERSION
 
 @media only screen and (min-width: 800px) {
+    //////HEADER MODIFICATIONS FOR DESKTOP
     header {
         position: relative;
         overflow: hidden !important;
         width: 100vw;
         height: 15em;
+        box-shadow: none; // removes shadow under mobile header 
+        background-color: $clear; // transparent background so gradient shows
         h1 {
             font-size: 3.5em;
             top: 0.4em;
             right: 3em;
             font-family: $cousine;
         }
+        h1:hover {
+        transform: scale(1.5) // hover title animation
+        }
         #head-circle {
             position: fixed;
-            // transform: scale(1.2);
             left: -3em;
         }
         #head-square {
@@ -262,45 +245,8 @@ footer {
             height: 18em;
             width: 30em;
         }
-        #text-banner {
-            display: none; /////////////////////
-            position: relative;
-            top: -0.7em;
-            left: -1.5em;
-        }
-        
     }
-    #nav-icon-mob {
-        display: none;
-    }
-    #nav-icon-desk {
-        display: block;
-        z-index: 11;
-        position: fixed;
-        top: 0.2em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
-        transition: 0.1s;
-        
-    }
-    #nav-icon-desk:hover {
-        color: $pale-orange;
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-    // #nav-desk {
-    //     position: absolute;
-    //     ul {
-    //         background-color: $white;
-    //         height: 100vh; //makes the sidebar take up full vertical height
-    //         padding-right: 5em;
-    //         li {
-    //             font-size: 2em;
-    //             color: red;
-    //         }
-    //     }
-    // }
+    //////////NAVBAR ICON MODIFICATIONS FOR DESKTOP
     #nav-mob {
         #nav-links-mob {
             z-index: 10;
@@ -310,18 +256,11 @@ footer {
             height: 25em;
             width: 25em;
             transition: 0.2s;
-            // transform: skewX(-10deg);
             border-radius: 50%;
-            border: blue dotted 2em;
-
-            // backdrop-filter: none;
-            
+            border: blue dotted 2em; // adds blue dots around ul
             ul {
                 z-index: 10;
                 position: fixed;
-                // height: min-content; //makes the sidebar take up full vertical height
-                // // top: 3em;
-                // left: 3em;
                 margin-left: 3em;
                 margin-top: 3em;
                 height: 15em;
@@ -331,18 +270,12 @@ footer {
                 background-color: $white;
                 box-shadow: $white 0em 0em 3em 3em;
                 transform: rotate(-40deg);
-                // opacity: 0%; //////// prevents menu wrapping to other side when hidden
-                // transform: skewX(-10deg);
-                // border: blue dashed 30px;
-                // box-shadow: $pale-orange 1em 1em 1em;
             }
             li {
                 z-index: 10;
                 list-style: none;
                 font-family: $karla;
                 font-size: 2.3em;
-                // text-shadow: $lavendar 5px 5px 1px;
-                // // border: 3px solid $pine;
                 padding: .2em .3em .1em 2em;
                 transition: 0.5s;
                 transform: rotate(40deg);
@@ -360,7 +293,7 @@ footer {
                     text-decoration: none;
                     text-transform: lowercase;
                 }
-                a:hover::before {
+                a:hover::before {  // turns links into <html> looking code :)
                     content: '<';
                 }
                 a:hover::after {
@@ -370,23 +303,33 @@ footer {
         }
     }
     #show {
-        display: none;
+        display: none;     // hides checkbox
     }
     #show:checked ~ #nav-links-mob {
-        display: block;
+        display: block;        // shows menu + slides from left
         transform: translateX(20em);
-        // backdrop-filter: blur(.2em);
-    }
-    #show:checked ~ #nav-links-mob ul {
-
-
     }
     #nav-mob:hover ~ main {
-        transform: translateX(20em);
+        transform: translateX(20em); // slides main to right when hover menu
     }
-    // #nav-links-mob:hover {
-    //     transform: rotate(30deg);
-    // }
+    #nav-icon-mob {
+        display: none; // hide mobile hamburger icon
+    }
+    #nav-icon-desk {
+        display: block; // show desktop menu icon
+        z-index: 11;
+        position: fixed;
+        top: 0.2em;
+        left: 0.5em;
+        font-size: 3em;
+        color: $brown;
+        transition: 0.1s;
+    }
+    #nav-icon-desk:hover {  // hover styling menu icon
+        color: $pale-orange;
+        transform: scale(1.2);
+        cursor: pointer; // making it look like a link
+    }
 
 /////
 
@@ -396,31 +339,30 @@ footer {
 
 
     body {
-        background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white);
-        overflow-x: hidden;
+        background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // circle gradient from bottom right
+        overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
     }
     main {
         position: relative;
-        margin-bottom: 30em;  //// adds space to bottom of main for footer
+        margin-bottom: 30em;  // adds space to bottom of main so clears footer
         margin-top: -2em;
         transition: 0.5s;
         height: 150vh;
-        display: flex;
+        display: flex; 
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        // align-content: flex-start;
     }
 
     section {
-        @include card;
+        @include card; // includes the card @mixin
         background-color: rgb(242, 253, 241, 0.1);
         margin: 2em 0em 0em 2em;
         width: 100vw;
         max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
         transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-        overflow: hidden;
-        position: relative;
+        overflow: hidden; // make cards only hold so much text...
+        position: relative; // then have a hacky "fade-out" effect
         -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         h2 {
@@ -438,42 +380,38 @@ footer {
             position: absolute;
             right: 1.3em;
             top: 2.5em;
-            
         }
-    #expand {
-        display: none;
-        transition: 2s;
-    }
-    #expand:checked ~ #sec-intro {
-        background-color: $white;
-        // box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-        flex-wrap: nowrap;
-        -webkit-mask-image: none;
-        mask-image: none;
-        // overflow:auto;
-    }
-
-    #expand-icon {
-        display: inline-block;
-        transition: 0.1s;
-    }
-    #expand-text {
-        display: inline-block;
-        font-family: 'Monaco', monospace;
-        font-size: 1em;
-        right: 0.8em;
-        top: 3.7em;
-        line-height: 0.8em;     ///// reduces vertical space - text
-    }
-    #expand-icon:hover {
-        transform: scale(1.2);
-    }
+        #expand {
+            display: none;
+            transition: 2s;
+        }
+        #expand:checked ~ #sec-intro { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
+            width: 100vw;
+            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+        }
+        #expand-icon {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            right: 0.8em;
+            top: 3.7em;
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon:hover {
+            transform: scale(1.2); // grows icon
+        }
     //////////////
 
     ///// HOVER TO FOCUS SECTION v2
-    section:hover {
+    section:hover {  // increases opacity when hover over section
             background-color: $white;
             box-shadow: gray 0em 0em 2em;
             width: 100vw;
@@ -481,87 +419,23 @@ footer {
             mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
             // overflow:auto;
         }
-    #expand:hover ~ #sec-intro {
+    #expand:hover ~ #sec-intro { // keeps the opacity when hover over icon too
         background-color: $white;
         box-shadow: gray 0em 0em 2em;
         width: 100vw;
         flex-wrap: nowrap;
-        // -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        //     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        // overflow:auto;
     }
-        ////
+    ////////////////
 
-    ///////////// HOVER TO READ MORE OVERLAY
-    // .expand-cont {
-    //     display: flex;
-    //     justify-content: flex-end;
-    //     // margin-right: 0em;
-    //     position: absolute;
-    //     transition: 0.5s;
-    //     top: 5em;
-    //     left: 5em;
-    //     .expand {
-    //         display: inline-block;
-    //         opacity: 1;
-    //         color: $brown;
-    //         font-size: 10em;
-    //         opacity: 0.5;
-    //         transform: rotate(5deg);
-    //     }
-    // }
-    // section:hover > .expand-cont {
-    //     // transform: translateY(-50em);
-    //     opacity: 0;
-    //     filter: blur(2em);
-    // }
-    /////////////
-
-
-
-    // section:hover {
-    //     background-color: $white;
-    //     box-shadow: gray 0em 0em 2em;
-    //     width: 100vw;
-    //     max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-    //     flex-wrap: nowrap;
-    //     -webkit-mask-image: none;
-    //     mask-image: none;
-    //     // overflow:auto;
-    // }
-
-    /////// BOTTOM BLUR DISSAPPEARS WHEN CARD ENLARGED
-
-
-    
-    
-    // #sec-intro:hover + #sec-1 {
-    //     background-color: red;
-    //     box-shadow: gray 0em 0em 2em;
-    //     width: 100vw;
-    //     height: 50vw;
-    // }
-    // #sec-intro {
-    //     order: 0;
-    // }
-    // #sec-1 {
-    //     order: 1;
-    // }
-    // #sec-2 {
-    //     order: 2;
-    // }
-    // #sec-3 {
-    //     order: 3;
-    // }
     p{
         font-size: 1.2em;
     }
-    p::selection {
-        background-color: white;
+
+    p::selection { // changes text highlight colour
+        background-color: white; 
     }
 
-
-    ::selection {
+    ::selection { // turns off text highlight for pseudo "buttons"
         background: none;
     }
     
@@ -571,7 +445,6 @@ footer {
         text-align: center;
         background-color: $white;
         width: 150vw;
-        // box-shadow: gray 0em 0em 0.2em 0.1em;
         border: rgb(183, 183, 183) 1px solid;
         form {
             background-color: $white;
@@ -591,7 +464,7 @@ footer {
             border: none;
             transition: 0.1s;
         }
-        #contact-button:hover {
+        #contact-button:hover { // act like a link
             cursor: pointer;
             background-color: $purple;
         }
