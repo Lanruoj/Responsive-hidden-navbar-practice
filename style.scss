@@ -38,7 +38,7 @@ $monaco: 'Monaco', monospace;
 }
 
 html, body {
-	min-height: 100vh;
+	height: 100vh;
 }
 
 body {
@@ -95,52 +95,6 @@ header {
 }
 
 ////////////MOBILE NAV MENU
-#nav-mob {
-    #nav-icon-mob {
-        z-index: 4;
-        position: fixed;
-        top: 0.5em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
-    }
-    #nav-links-mob {
-        position: fixed;
-        top: 5.1em;
-        left: -22.2em;
-        transition: 0.2s;
-        ul { 
-            height: 100vh; //makes the sidebar take up full vertical height
-            padding-right: 5em;
-            width: 85vw;
-            background-color: $white;
-            box-shadow: 0em 0em 1em 5em $white;
-        }
-        li {
-            list-style: none;
-            font-family: $karla;
-            font-size: 3em;
-            padding: .3em .3em .3em 3.5em;
-            transition: 0.5s;
-            a, a:visited { // changing the menu link style
-                text-decoration: none;
-                color: $brown;
-                font-style: italic;
-            }
-        }
-    }
-    #show {
-        display: none; // HIDES ACTUAL CHECKBOX
-    }
-    #show:checked ~ #nav-links-mob {  // 
-        display: block; // stop being hidden
-        transform: translateX(20em); // slide in from left
-    }
-}
-
-    #nav-icon-desk {
-        display: none; // hides desktop menu icon
-    }
 
 ///////MAIN SECTION    
 main {
@@ -185,11 +139,6 @@ footer {
     }
 }
 
-
-
-#nav-desk {
-    display: none;  // hides desktop menu
-}
 
 #expand,
 #expand-icon,
@@ -247,89 +196,76 @@ footer {
         }
     }
     //////////NAVBAR ICON MODIFICATIONS FOR DESKTOP
-    #nav-mob {
-        #nav-links-mob {
-            z-index: 10;
-            position: fixed;
-            top: 8em;
-            left: -23em;
-            height: 25em;
-            width: 25em;
-            transition: 0.2s;
-            border-radius: 50%;
-            border: blue dotted 2em; // adds blue dots around ul
-            ul {
-                z-index: 10;
-                position: fixed;
-                margin-left: 3em;
-                margin-top: 3em;
-                height: 15em;
-                width: 15em;
-                padding-right: 5em;
-                border-radius: 50%;
-                background-color: $white;
-                box-shadow: $white 0em 0em 3em 3em;
-                transform: rotate(-40deg);
-            }
-            li {
-                z-index: 10;
-                list-style: none;
-                font-family: $karla;
-                font-size: 2.3em;
-                padding: .2em .3em .1em 2em;
-                transition: 0.5s;
-                transform: rotate(40deg);
-                a, a:visited {
-                    text-decoration: none;
-                    color: $brown;
-                    font-style: italic;
-                    text-decoration: line-through;
-                    transition: 0.2s;
-                }
-                a:hover {
-                    color: $pale-orange;
-                    font-family: Monaco, monospace;
-                    font-style: normal;
-                    text-decoration: none;
-                    text-transform: lowercase;
-                }
-                a:hover::before {  // turns links into <html> looking code :)
-                    content: '<';
-                }
-                a:hover::after {
-                    content: '>';
-                }
-            }
-        }
-    }
-    #show {
-        display: none;     // hides checkbox
-    }
-    #show:checked ~ #nav-links-mob {
-        display: block;        // shows menu + slides from left
-        transform: translateX(20em);
-    }
-    #nav-mob:hover ~ main {
-        transform: translateX(20em); // slides main to right when hover menu
-    }
-    #nav-icon-mob {
-        display: none; // hide mobile hamburger icon
-    }
-    #nav-icon-desk {
-        display: block; // show desktop menu icon
-        z-index: 11;
-        position: fixed;
-        top: 0.2em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
-        transition: 0.1s;
-    }
-    #nav-icon-desk:hover {  // hover styling menu icon
-        color: $pale-orange;
-        transform: scale(1.2);
-        cursor: pointer; // making it look like a link
-    }
+    
+
+//// hover
+
+
+    // #nav-cont {
+    //     position: absolute;
+    //     left: -20em;
+    //     background-color: red;
+    //     height: 100vh;
+    //     width: 20vw;
+    // }
+    // #nav-button:hover ~ #nav-cont {
+    //     position: absolute;
+    //     left: 0em;
+    //     background-color: blue;
+    //     height: 100vh;
+    //     width: 20vw;
+    // }
+    // #nav-button:hover ~ main {
+    //     position: absolute;
+    //     left: 20em;
+    //     background-color: blue;
+    // }
+
+////// click
+
+#nav-cont {
+        position: absolute;
+        left: -30vw;
+        background-color: $white;
+        height: 100em;   // 100vh wouldn't work!
+        width: 30vw;
+        transition: 0.5s;
+        box-shadow: -1em 3em 1em 1em gray;
+}
+#menu-button:checked ~ #nav-cont {
+        position: absolute;
+        transform: translateX(200px);
+        // width: 20vw;
+}
+#menu-button:checked ~ main {
+        transform: translateX(200px);
+};
+
+#nav-list {
+    color: red;
+    text-align: right;
+    padding: 2em;
+    font-size: 2em;
+}
+
+
+
+
+
+#menu-text {
+    position: absolute;
+    top: 0.3em;
+    left: 1em;
+    z-index: 50;
+    font-size: 3em;
+};
+
+#menu-button {
+    display: none;
+}
+
+
+
 
 /////
 

@@ -5,7 +5,7 @@
 }
 
 html, body {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 body {
@@ -60,51 +60,6 @@ header #head-circle {
   border-radius: 50%;
 }
 
-#nav-mob #nav-icon-mob {
-  z-index: 4;
-  position: fixed;
-  top: 0.5em;
-  left: 0.5em;
-  font-size: 3em;
-  color: rgb(137, 126, 109);
-}
-#nav-mob #nav-links-mob {
-  position: fixed;
-  top: 5.1em;
-  left: -22.2em;
-  transition: 0.2s;
-}
-#nav-mob #nav-links-mob ul {
-  height: 100vh;
-  padding-right: 5em;
-  width: 85vw;
-  background-color: rgb(242, 253, 241);
-  box-shadow: 0em 0em 1em 5em rgb(242, 253, 241);
-}
-#nav-mob #nav-links-mob li {
-  list-style: none;
-  font-family: "Karla", sans-serif;
-  font-size: 3em;
-  padding: 0.3em 0.3em 0.3em 3.5em;
-  transition: 0.5s;
-}
-#nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
-  text-decoration: none;
-  color: rgb(137, 126, 109);
-  font-style: italic;
-}
-#nav-mob #show {
-  display: none;
-}
-#nav-mob #show:checked ~ #nav-links-mob {
-  display: block;
-  transform: translateX(20em);
-}
-
-#nav-icon-desk {
-  display: none;
-}
-
 main {
   margin: 2em;
   margin-top: 7em;
@@ -154,10 +109,6 @@ footer #contact-button {
   border: none;
 }
 
-#nav-desk {
-  display: none;
-}
-
 #expand,
 #expand-icon,
 #expand-text {
@@ -195,92 +146,42 @@ footer #contact-button {
     width: 30em;
   }
 
-  #nav-mob #nav-links-mob {
-    z-index: 10;
-    position: fixed;
-    top: 8em;
-    left: -23em;
-    height: 25em;
-    width: 25em;
-    transition: 0.2s;
-    border-radius: 50%;
-    border: blue dotted 2em;
-  }
-  #nav-mob #nav-links-mob ul {
-    z-index: 10;
-    position: fixed;
-    margin-left: 3em;
-    margin-top: 3em;
-    height: 15em;
-    width: 15em;
-    padding-right: 5em;
-    border-radius: 50%;
+  #nav-cont {
+    position: absolute;
+    left: -30vw;
     background-color: rgb(242, 253, 241);
-    box-shadow: rgb(242, 253, 241) 0em 0em 3em 3em;
-    transform: rotate(-40deg);
-  }
-  #nav-mob #nav-links-mob li {
-    z-index: 10;
-    list-style: none;
-    font-family: "Karla", sans-serif;
-    font-size: 2.3em;
-    padding: 0.2em 0.3em 0.1em 2em;
+    height: 100em;
+    width: 30vw;
     transition: 0.5s;
-    transform: rotate(40deg);
-  }
-  #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
-    text-decoration: none;
-    color: rgb(137, 126, 109);
-    font-style: italic;
-    text-decoration: line-through;
-    transition: 0.2s;
-  }
-  #nav-mob #nav-links-mob li a:hover {
-    color: rgb(230, 100, 101);
-    font-family: Monaco, monospace;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-  #nav-mob #nav-links-mob li a:hover::before {
-    content: "<";
-  }
-  #nav-mob #nav-links-mob li a:hover::after {
-    content: ">";
+    box-shadow: -1em 3em 1em 1em gray;
   }
 
-  #show {
-    display: none;
+  #menu-button:checked ~ #nav-cont {
+    position: absolute;
+    transform: translateX(200px);
   }
 
-  #show:checked ~ #nav-links-mob {
-    display: block;
-    transform: translateX(20em);
+  #menu-button:checked ~ main {
+    transform: translateX(200px);
   }
 
-  #nav-mob:hover ~ main {
-    transform: translateX(20em);
+  #nav-list {
+    color: red;
+    text-align: right;
+    padding: 2em;
+    font-size: 2em;
   }
 
-  #nav-icon-mob {
-    display: none;
-  }
-
-  #nav-icon-desk {
-    display: block;
-    z-index: 11;
-    position: fixed;
-    top: 0.2em;
-    left: 0.5em;
+  #menu-text {
+    position: absolute;
+    top: 0.3em;
+    left: 1em;
+    z-index: 50;
     font-size: 3em;
-    color: rgb(137, 126, 109);
-    transition: 0.1s;
   }
 
-  #nav-icon-desk:hover {
-    color: rgb(230, 100, 101);
-    transform: scale(1.2);
-    cursor: pointer;
+  #menu-button {
+    display: none;
   }
 
   body {
