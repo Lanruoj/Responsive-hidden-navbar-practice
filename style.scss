@@ -228,10 +228,11 @@ footer {
         position: absolute;
         left: -30vw;
         background-color: $white;
-        height: 100em;   // 100vh wouldn't work!
+        height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
         width: 30vw;
         transition: 0.5s;
-        box-shadow: -1em 3em 1em 1em gray;
+        box-shadow: -1em 2em 1em 1em gray;
+        border-radius: 0 0 40em 0;  // ^^^^^
 }
 #menu-button:checked ~ #nav-cont {
         position: absolute;

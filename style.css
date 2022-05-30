@@ -150,10 +150,11 @@ footer #contact-button {
     position: absolute;
     left: -30vw;
     background-color: rgb(242, 253, 241);
-    height: 100em;
+    height: 50em;
     width: 30vw;
     transition: 0.5s;
-    box-shadow: -1em 3em 1em 1em gray;
+    box-shadow: -1em 2em 1em 1em gray;
+    border-radius: 0 0 40em 0;
   }
 
   #menu-button:checked ~ #nav-cont {
