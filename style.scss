@@ -14,6 +14,7 @@ $rammetto: 'Rammetto One', cursive;
 $unica: 'Unica One', cursive;
 $dela: 'Dela Gothic One', cursive;
 $cousine: 'Cousine', monospace;
+$monaco: 'Monaco', monospace;
 //MIXINS
 @mixin card() {
         border-radius: 2em 2em 2em 2em;
@@ -219,6 +220,11 @@ footer {
     display: none;   ////////// hover text not on mobile
 }
 
+#menu-button,
+#menu-text,
+#nav-cont {
+    display: none;
+}
 
 
 
@@ -270,123 +276,84 @@ footer {
         }
         
     }
-    #nav-icon-mob {
-        display: none;
-    }
-    #nav-icon-desk {
-        display: block;
-        z-index: 11;
-        position: fixed;
-        top: 0.2em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
-        transition: 0.1s;
-        
-    }
-    #nav-icon-desk:hover {
-        color: $pale-orange;
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-    // #nav-desk {
-    //     position: absolute;
-    //     ul {
-    //         background-color: $white;
-    //         height: 100vh; //makes the sidebar take up full vertical height
-    //         padding-right: 5em;
-    //         li {
-    //             font-size: 2em;
-    //             color: red;
-    //         }
-    //     }
-    // }
-    #nav-mob {
-        #nav-links-mob {
-            z-index: 10;
-            position: fixed;
-            top: 8em;
-            left: -23em;
-            height: 25em;
-            width: 25em;
-            transition: 0.2s;
-            // transform: skewX(-10deg);
-            border-radius: 50%;
-            border: blue dotted 2em;
 
-            // backdrop-filter: none;
-            
-            ul {
-                z-index: 10;
-                position: fixed;
-                // height: min-content; //makes the sidebar take up full vertical height
-                // // top: 3em;
-                // left: 3em;
-                margin-left: 3em;
-                margin-top: 3em;
-                height: 15em;
-                width: 15em;
-                padding-right: 5em;
-                border-radius: 50%;
-                background-color: $white;
-                box-shadow: $white 0em 0em 3em 3em;
-                transform: rotate(-40deg);
-                // opacity: 0%; //////// prevents menu wrapping to other side when hidden
-                // transform: skewX(-10deg);
-                // border: blue dashed 30px;
-                // box-shadow: $pale-orange 1em 1em 1em;
-            }
-            li {
-                z-index: 10;
-                list-style: none;
-                font-family: $karla;
-                font-size: 2.3em;
-                // text-shadow: $lavendar 5px 5px 1px;
-                // // border: 3px solid $pine;
-                padding: .2em .3em .1em 2em;
-                transition: 0.5s;
-                transform: rotate(40deg);
-                a, a:visited {
-                    text-decoration: none;
-                    color: $brown;
-                    font-style: italic;
-                    text-decoration: line-through;
-                    transition: 0.2s;
-                }
-                a:hover {
-                    color: $pale-orange;
-                    font-family: Monaco, monospace;
-                    font-style: normal;
-                    text-decoration: none;
-                    text-transform: lowercase;
-                }
-                a:hover::before {
-                    content: '<';
-                }
-                a:hover::after {
-                    content: '>';
-                }
-            }
+    /////// DESKTOP MENU///////
+
+    #nav-cont {
+        display: inline-block;
+        position: absolute;
+        left: -30vw;
+        background-color: $white;
+        height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
+        width: 30vw;
+        transition: 0.5s;
+        box-shadow: -1em 2em 1em 1em gray;
+        border-radius: 0 0 40em 0;  // ^^^^^
+    }
+    #menu-button:checked ~ #nav-cont {
+            position: absolute;
+            transform: translateX(200px);
+            // width: 20vw;
+    }
+    #menu-button:checked ~ main {
+            transform: translateX(200px);
+    };
+
+    #nav-list {
+        text-align: right;
+        padding: 2em;
+        padding-right: 0.5em;
+        font-size: 1.5em;
+        font-family: $monaco;
+        a, a:visited {
+            text-decoration: none;
+            color: black;
+            transition: 0.1s;
         }
+        a:hover {
+            color: $purple;
+            text-transform: lowercase;
+        }
+        a:hover::before {
+            content: 'cd ./';
+        }
+        // a:hover::after {
+        //     content: '>';
+        // }
     }
-    #show {
+
+
+
+
+    #menu-text {
+        display: inline-block;
+        position: absolute;
+        top: 0.3em;
+        left: 1em;
+        z-index: 50;
+        font-size: 3em;
+        transition: 0.1s;
+    }
+    #menu-text:hover {
+        cursor: pointer;
+        transform: translatex(0.3em);
+    }
+    #arrow {
+        position: absolute;
+        left: 0.1em;
+        -webkit-text-stroke: 8px $white;
+        transform: scale(1.2, 1);
+    }
+
+    #menu-button {
         display: none;
     }
-    #show:checked ~ #nav-links-mob {
-        display: block;
-        transform: translateX(20em);
-        // backdrop-filter: blur(.2em);
-    }
-    #show:checked ~ #nav-links-mob ul {
 
+    #nav-mob {
+        display: none;
+    }
 
-    }
-    #nav-mob:hover ~ main {
-        transform: translateX(20em);
-    }
-    // #nav-links-mob:hover {
-    //     transform: rotate(30deg);
-    // }
+///////
 
 
     body {

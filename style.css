@@ -166,6 +166,12 @@ footer #contact-button {
   display: none;
 }
 
+#menu-button,
+#menu-text,
+#nav-cont {
+  display: none;
+}
+
 @media only screen and (min-width: 800px) {
   header {
     position: relative;
@@ -198,92 +204,75 @@ footer #contact-button {
     left: -1.5em;
   }
 
-  #nav-icon-mob {
-    display: none;
+  #nav-cont {
+    display: inline-block;
+    position: absolute;
+    left: -30vw;
+    background-color: rgb(242, 253, 241);
+    height: 50em;
+    width: 30vw;
+    transition: 0.5s;
+    box-shadow: -1em 2em 1em 1em gray;
+    border-radius: 0 0 40em 0;
   }
 
-  #nav-icon-desk {
-    display: block;
-    z-index: 11;
-    position: fixed;
-    top: 0.2em;
-    left: 0.5em;
+  #menu-button:checked ~ #nav-cont {
+    position: absolute;
+    transform: translateX(200px);
+  }
+
+  #menu-button:checked ~ main {
+    transform: translateX(200px);
+  }
+
+  #nav-list {
+    text-align: right;
+    padding: 2em;
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    font-family: "Monaco", monospace;
+  }
+  #nav-list a, #nav-list a:visited {
+    text-decoration: none;
+    color: black;
+    transition: 0.1s;
+  }
+  #nav-list a:hover {
+    color: rgb(64, 0, 255);
+    text-transform: lowercase;
+  }
+  #nav-list a:hover::before {
+    content: "cd ./";
+  }
+
+  #menu-text {
+    display: inline-block;
+    position: absolute;
+    top: 0.3em;
+    left: 1em;
+    z-index: 50;
     font-size: 3em;
-    color: rgb(137, 126, 109);
     transition: 0.1s;
   }
 
-  #nav-icon-desk:hover {
-    color: rgb(230, 100, 101);
-    transform: scale(1.2);
+  #menu-text:hover {
     cursor: pointer;
+    transform: translatex(0.3em);
   }
 
-  #nav-mob #nav-links-mob {
-    z-index: 10;
-    position: fixed;
-    top: 8em;
-    left: -23em;
-    height: 25em;
-    width: 25em;
-    transition: 0.2s;
-    border-radius: 50%;
-    border: blue dotted 2em;
-  }
-  #nav-mob #nav-links-mob ul {
-    z-index: 10;
-    position: fixed;
-    margin-left: 3em;
-    margin-top: 3em;
-    height: 15em;
-    width: 15em;
-    padding-right: 5em;
-    border-radius: 50%;
-    background-color: rgb(242, 253, 241);
-    box-shadow: rgb(242, 253, 241) 0em 0em 3em 3em;
-    transform: rotate(-40deg);
-  }
-  #nav-mob #nav-links-mob li {
-    z-index: 10;
-    list-style: none;
-    font-family: "Karla", sans-serif;
-    font-size: 2.3em;
-    padding: 0.2em 0.3em 0.1em 2em;
-    transition: 0.5s;
-    transform: rotate(40deg);
-  }
-  #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
-    text-decoration: none;
-    color: rgb(137, 126, 109);
-    font-style: italic;
-    text-decoration: line-through;
-    transition: 0.2s;
-  }
-  #nav-mob #nav-links-mob li a:hover {
-    color: rgb(230, 100, 101);
-    font-family: Monaco, monospace;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: lowercase;
-  }
-  #nav-mob #nav-links-mob li a:hover::before {
-    content: "<";
-  }
-  #nav-mob #nav-links-mob li a:hover::after {
-    content: ">";
+  #arrow {
+    position: absolute;
+    left: 0.1em;
+    -webkit-text-stroke: 8px rgb(242, 253, 241);
+    transform: scale(1.2, 1);
   }
 
-  #show {
+  #menu-button {
     display: none;
   }
 
-  #show:checked ~ #nav-links-mob {
-    display: block;
-    transform: translateX(20em);
-  }
-
-  #nav-mob:hover ~ main {
-    transform: translateX(20em);
+  #nav-mob {
+    display: none;
   }
 
   body {
