@@ -423,46 +423,22 @@ footer {
     }
 
     /////////////// EXPAND SYMBOL ON TOP RIGHT
-    // .expand {
-    //     opacity: 1;
-    //     color: $purple;
-    //     font-size: 1.2em;
-    // }
-    // .blur {
-    //     display: flex;
-    //     justify-content: flex-end;
-    //     margin-right: 3em;
-    // }
-    //////////////
-
-    ///////////// HOVER TO READ MORE OVERLAY
-    .expand-cont {
-        display: flex;
-        justify-content: flex-end;
-        // margin-right: 0em;
-        position: absolute;
-        transition: 0.5s;
-        top: 5em;
-        left: 5em;
         .expand {
+            z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $brown;
-            font-size: 10em;
-            opacity: 0.5;
-            transform: rotate(5deg);
+            color: $purple;
+            font-size: 1.5em;
+            position: absolute;
+            right: 1.3em;
+            top: 2.5em;
+            
         }
+    #expand {
+        display: none;
+        transition: 2s;
     }
-    section:hover > .expand-cont {
-        // transform: translateY(-50em);
-        opacity: 0;
-        filter: blur(2em);
-    }
-    /////////////
-
-
-
-    section:hover {
+    #expand:checked ~ #sec-intro {
         background-color: $white;
         box-shadow: gray 0em 0em 2em;
         width: 100vw;
@@ -472,6 +448,61 @@ footer {
         mask-image: none;
         // overflow:auto;
     }
+
+    #expand-icon {
+        transition: 0.1s;
+    }
+    #expand-text {
+        font-size: 1em;
+        right: 0.8em;
+        top: 3.7em;
+        line-height: 0.8em;     ///// reduces vertical space - text
+    }
+    #expand-icon:hover {
+        transform: scale(1.2);
+    }
+    //////////////
+
+
+
+
+    ///////////// HOVER TO READ MORE OVERLAY
+    // .expand-cont {
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     // margin-right: 0em;
+    //     position: absolute;
+    //     transition: 0.5s;
+    //     top: 5em;
+    //     left: 5em;
+    //     .expand {
+    //         display: inline-block;
+    //         opacity: 1;
+    //         color: $brown;
+    //         font-size: 10em;
+    //         opacity: 0.5;
+    //         transform: rotate(5deg);
+    //     }
+    // }
+    // section:hover > .expand-cont {
+    //     // transform: translateY(-50em);
+    //     opacity: 0;
+    //     filter: blur(2em);
+    // }
+    /////////////
+
+
+
+    // section:hover {
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+    //     flex-wrap: nowrap;
+    //     -webkit-mask-image: none;
+    //     mask-image: none;
+    //     // overflow:auto;
+    // }
 
     /////// BOTTOM BLUR DISSAPPEARS WHEN CARD ENLARGED
 
