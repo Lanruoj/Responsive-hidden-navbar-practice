@@ -166,10 +166,23 @@ footer #contact-button {
   }
 
   #nav-list {
-    color: red;
     text-align: right;
     padding: 2em;
-    font-size: 2em;
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    font-family: "Monaco", monospace;
+  }
+  #nav-list a, #nav-list a:visited {
+    text-decoration: none;
+    color: black;
+    transition: 0.1s;
+  }
+  #nav-list a:hover {
+    color: rgb(64, 0, 255);
+    text-transform: lowercase;
+  }
+  #nav-list a:hover::before {
+    content: "cd ./";
   }
 
   #menu-text {
@@ -178,6 +191,19 @@ footer #contact-button {
     left: 1em;
     z-index: 50;
     font-size: 3em;
+    transition: 0.1s;
+  }
+
+  #menu-text:hover {
+    cursor: pointer;
+    transform: translatex(0.3em);
+  }
+
+  #arrow {
+    position: absolute;
+    left: 0.1em;
+    -webkit-text-stroke: 8px rgb(242, 253, 241);
+    transform: scale(1.2, 1);
   }
 
   #menu-button {
@@ -214,8 +240,6 @@ footer #contact-button {
     transition: 0.5s;
     overflow: hidden;
     position: relative;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
   section h2 {
     color: rgb(67, 96, 64);
@@ -224,6 +248,16 @@ footer #contact-button {
   }
   section h2 {
     color: rgb(67, 96, 64);
+  }
+
+  #sec-intro {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  #sec-3 {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
   .expand {
@@ -245,7 +279,7 @@ footer #contact-button {
   #expand:checked ~ #sec-intro {
     background-color: rgb(242, 253, 241);
     width: 100vw;
-    max-height: 100vw;
+    max-height: 100em;
     flex-wrap: nowrap;
     -webkit-mask-image: none;
     mask-image: none;
@@ -269,12 +303,19 @@ footer #contact-button {
     transform: scale(1.2);
   }
 
+  #sec-1:hover {
+    background-color: rgb(242, 253, 241);
+    width: 100vw;
+    max-height: 100vw;
+    flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
   section:hover {
     background-color: rgb(242, 253, 241);
     box-shadow: gray 0em 0em 2em;
     width: 100vw;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
   #expand:hover ~ #sec-intro {

@@ -5,6 +5,7 @@ $brown: rgb(137, 126, 109);
 $pine: rgb(67, 96, 64);
 $black: rgb(22, 22, 22);
 $purple: rgb(64, 0, 255);
+$dark-purple: rgb(53, 0, 213);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255,255,255,0);
@@ -242,12 +243,27 @@ footer {
 };
 
 #nav-list {
-    color: red;
     text-align: right;
     padding: 2em;
-    font-size: 2em;
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    font-family: $monaco;
+    a, a:visited {
+        text-decoration: none;
+        color: black;
+        transition: 0.1s;
+    }
+    a:hover {
+        color: $purple;
+        text-transform: lowercase;
+    }
+    a:hover::before {
+        content: 'cd ./';
+    }
+    // a:hover::after {
+    //     content: '>';
+    // }
 }
-
 
 
 
@@ -258,7 +274,18 @@ footer {
     left: 1em;
     z-index: 50;
     font-size: 3em;
-};
+    transition: 0.1s;
+}
+#menu-text:hover {
+    cursor: pointer;
+    transform: translatex(0.3em);
+}
+#arrow {
+    position: absolute;
+    left: 0.1em;
+    -webkit-text-stroke: 8px $white;
+    transform: scale(1.2, 1);
+}
 
 #menu-button {
     display: none;
@@ -299,13 +326,19 @@ footer {
         transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
         overflow: hidden; // make cards only hold so much text...
         position: relative; // then have a hacky "fade-out" effect
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         h2 {
             color: $pine;
         }
     }
 
+    #sec-intro {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+    #sec-3 {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
     /////////////// EXPAND SYMBOL ON TOP RIGHT
         .expand {
             z-index: 50;
@@ -324,7 +357,7 @@ footer {
         #expand:checked ~ #sec-intro { //EXPANDS SECTION WHEN CLICK ICON
             background-color: $white;
             width: 100vw;
-            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
             flex-wrap: nowrap;
             -webkit-mask-image: none; // turn off transparent gradient
             mask-image: none;
@@ -344,6 +377,20 @@ footer {
         #expand-icon:hover {
             transform: scale(1.2); // grows icon
         }
+
+/////////////// section-1
+
+#sec-1:hover {
+    background-color: $white;
+            width: 100vw;
+            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+}
+
+
+
     //////////////
 
     ///// HOVER TO FOCUS SECTION v2
@@ -351,8 +398,8 @@ footer {
             background-color: $white;
             box-shadow: gray 0em 0em 2em;
             width: 100vw;
-            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            // -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            // mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
             // overflow:auto;
         }
     #expand:hover ~ #sec-intro { // keeps the opacity when hover over icon too
@@ -361,6 +408,8 @@ footer {
         width: 100vw;
         flex-wrap: nowrap;
     }
+
+
     ////////////////
 
     p{
